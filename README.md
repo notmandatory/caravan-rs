@@ -1,20 +1,8 @@
-<div align="center">
+<div style="text-align:center">
 
-  <h1><code>wasm-pack-template</code></h1>
+  <h1><code>caravan-rs</code></h1>
 
-  <strong>A template for kick starting a Rust and WebAssembly project using <a href="https://github.com/rustwasm/wasm-pack">wasm-pack</a>.</strong>
-
-  <p>
-    <a href="https://travis-ci.org/rustwasm/wasm-pack-template"><img src="https://img.shields.io/travis/rustwasm/wasm-pack-template.svg?style=flat-square" alt="Build Status" /></a>
-  </p>
-
-  <h3>
-    <a href="https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/index.html">Tutorial</a>
-    <span> | </span>
-    <a href="https://discordapp.com/channels/442252698964721669/443151097398296587">Chat</a>
-  </h3>
-
-  <sub>Built with 🦀🕸 by <a href="https://rustwasm.github.io/">The Rust and WebAssembly Working Group</a></sub>
+  <strong>An example Rust and WebAssembly project using <a href="https://github.com/rustwasm/wasm-pack">wasm-pack</a>.</strong>
 </div>
 
 ## About
@@ -32,13 +20,21 @@ templates and usages of `wasm-pack`.
 
 ## 🚴 Usage
 
-### 🐑 Use `cargo generate` to Clone this Template
+### 🍺 Install LLVM
 
-[Learn more about `cargo generate` here.](https://github.com/ashleygwilliams/cargo-generate)
+#### On MacOS
 
-```
-cargo generate --git https://github.com/rustwasm/wasm-pack-template.git --name my-project
-cd my-project
+Using brew:
+```shell
+brew install llvm
+
+# make sure it's in your path
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+# for older homebrew installs
+# export PATH="/usr/local/opt/llvm/bin:$PATH"
+export CC=/opt/homebrew/opt/llvm/bin/clang
+export AR=/opt/homebrew/opt/llvm/bin/llvm-ar
 ```
 
 ### 🛠️ Build with `wasm-pack build`
